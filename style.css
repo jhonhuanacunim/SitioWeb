@@ -68,9 +68,8 @@ body{
 }
 
 .metodos{
-    display: flex;
-    justify-content: center;
     margin: 10px;     
+    height: 100%;
 }
 
 .main .metodos{
@@ -143,9 +142,23 @@ body{
     align-items: center;
     background: #fff;
     justify-content: center; 
+    max-height: 90%;
 }
 
+.nameMetodo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
 
+p{
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+    color: rebeccapurple;  
+}
 .main .content .img{
     height: 120px;
     width: 140px;
@@ -183,6 +196,14 @@ body{
     color: #fff;
     background: linear-gradient(to bottom,#bea2e7 0%, #86b7e7 100%);
     transition: all 0.3s ease;
+    /* width: 30vw; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+a{
+
 }
 /* .content a:hover{
     transform: scale(0.94);
