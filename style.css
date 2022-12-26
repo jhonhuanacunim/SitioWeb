@@ -67,6 +67,12 @@ body{
     right: -130px;
 }
 
+.metodos{
+    display: flex;
+    justify-content: center;
+    margin: 10px;     
+}
+
 .main .metodos{
     display: flex;
     align-items:center;
