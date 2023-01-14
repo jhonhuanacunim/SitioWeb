@@ -22,8 +22,8 @@ a {
 .numAle-container .title-card{
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
     align-items: center;
+    padding-right: 30px;
 }
 
 .title-card .entry-date{
@@ -40,12 +40,62 @@ td{
     padding: 4px; text-align: center;
 }
 
+.body-metodo {
+    justify-self: center;
+    display: flex;
+    overflow-x: scroll;
+    max-width: 300px;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+    gap: 10px;
+}
+
+.body-metodo::-webkit-scrollbar{
+    /* width: 0; */
+}
+
 .card-numAle{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+.card-numAle .border-card{
+    scroll-snap-align: center;
+    position: relative;
+}
+
+.card-numAle .border-card:first-child{
+    margin-left: 100px;
+}
+
+#solucion,#siguiente {
+    margin-right: 100px;
+}
+/* Tabla de los  resultados */
+#contenedorTabla-Resul{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 225px;
+    max-height: 460px;    
+    padding: 10px;
+}
+
+#contenedorTabla-Resul th{
+    text-align: center;
+}
+
+#contenedorTabla-Resul .table{
+    min-width: 200px;
+    text-align: center;
+}
+
+#card-table-resul th{
+    border: 1px solid black;
+}
+
+/* Tabla de los numero aleatorios */
 #contenedorTabla{
     display: flex;
     flex-direction: column;
@@ -75,4 +125,60 @@ td{
 
 #card-table th{
     border: 1px solid black;
+}
+
+/* Diseño de las tablas de entrada y salida de datos */
+.resul-container{
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+}
+
+.resul-container .card-table-entry{
+    height: 48%;
+}
+/* Diseño de la tabla de ingreso de datos */
+.card-table-entry{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+}
+
+
+.card-table-entry .date-entry, .table-entry{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.table-entry #contenedorTabla-Entry{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.date-entry .entry-date{
+    margin-bottom: 10px;
+    width: 70%;
+    min-width: 87px;
+    margin: 5px;
+
+}
+/* Diseño de tabla de entrada de datos (unidades, frecuencia) */
+#card-table-entry, th, td{
+    border: 1px solid black;
+}
+
+#card-table-entry td .card-date-entry{
+    border: none;
+}
+
+#card-table-entry thead th{
+    text-align: center;
+}
+#card-table-entry thead th .enca{
+    margin: 10px;
 }

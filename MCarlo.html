@@ -13,22 +13,50 @@
             <article class="title-card">
                 <p>Numeros aleatorios</p>
                 <input class="entry-date" type="number" id="numFilas"  min="1"  placeholder="Cantidad"/>
-                <button id="botonGenerar" >Generar Tabla</button>
+                <button id="botonGenerarTablaAle" >Generar Tabla</button>
                 <hr />                            
             </article>
-            <article class="card-numAle" id="calcular">
-                <div class="border-card">
-                    <div class="card">
-                        <section class="table">
-                            <div id="contenedorTabla">
-                            </div>   
-                        </section>
+
+            <section class="body-metodo">
+                <article class="card-numAle" id="calcular">
+                    <div class="border-card">
+                        <div class="card">
+                            <section class="table">
+                                <div id="contenedorTabla">
+                                </div>   
+                            </section>
+                        </div>
                     </div>
-                </div>
-            </article>
+                </article>
+                <article class="card-numAle" id="solucion">
+                    <div class="border-card">
+                        <div class="card">
+                            <section class="table">
+                                <div id="contenedorTabla-Resul">
+                                </div>   
+                            </section>
+                        </div>
+                    </div>
+                </article>                
+            </section>
+
         </section>      
         <section class="resul-container">
+            <div class="card-table-entry">
+                <section class="date-entry">
+                    <p>Numeros aleatorios</p>
+                    <input class="entry-date" type="number" id="numeroFilas"  min="1"  placeholder="Cantidad"/>
+                    <button id="botonGenerarTableEntry" >Generar Tabla</button>
+                    <hr />                            
+                </section>
+                <section class="table-entry">
+                    <div id="contenedorTabla-Entry">
+                    </div> 
+                </section>
+            </div>
+            <div class="card-table-exit">
 
+            </div>
         </section>
     </main>
 
@@ -36,3 +64,10 @@
 
 </body>
 </html>
+
+<!--                         <section>
+                            <a href="./grupo2.html"><img src="./src/flecha-ida.svg" alt="after"></a>
+                            <div>
+                                <a href="#resultado" onclick="calculargrupo1()">Calcular</a>
+                            </div>
+                        </section> -->
