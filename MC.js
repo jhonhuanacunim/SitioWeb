@@ -1,35 +1,47 @@
-const colores = new Array(
-    "aliceblue",
-    "antiquewhite",
-    "aqua",
-    "aquamarine",
-);
+function NumAletorio(){
+    let num=Math.random();
+    return num;
+}
+
 
 const generarTabla = () => {
-    const numFilas = document.getElementById("numFilas").value;
-    const numColumnas = document.getElementById("numColumnas").value;
+    const numFilas = parseInt(document.getElementById("numFilas").value);
     const contenedorTabla = document.getElementById("contenedorTabla");
 
     contenedorTabla.innerHTML = "";
-    let colorFondo, colorLetra;
-    let tabla = "<table>";
-    tabla+="<thead > <th style='border: 1px solid black;'>N°</th> <th style='border: 1px solid black;'>Numero Aleatorio</th> </thead>";
+    var ite=1;
+    let tabla = "<table id='card-table'>";
+    tabla+="<thead > <th >N°</th> <th>Numero Aleatorio</th> </thead>";
     // var tabla = "<table class='table'>";
     for (let k = 1; k <= numFilas; k++) {
         tabla += "<tr>";
-        for (let o = 1; o <= numColumnas; o++) {
-            tabla += "<td >UK</td>";
+        for (let o = 1; o <= 2; o++) {
+            if(o==1){
+                tabla += "<th >"+ite+"</th>";
+                ite++;
+            }else{
+                let num_ale=NumAletorio().toFixed(5);
+                tabla += "<td >"+num_ale+"</td>"; 
+            }
         }
         tabla += "</tr>";
     }
     tabla += "</table>";
     contenedorTabla.innerHTML = tabla;
+
+    var tabla1 = document.getElementById("card-table");
+    for(let i=1;i<tabla1.rows.length;i++){
+        let celda = tabla1.rows[i].cells[1];
+        console.log(celda);
+    }
 };
 
-window.addEventListener('load', function () {
 
+
+window.addEventListener('load', function () {
     document.getElementById('botonGenerar').addEventListener('click', function () {
         generarTabla();
     });
+}); 
 
-});
+

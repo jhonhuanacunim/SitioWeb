@@ -8,18 +8,31 @@
     <link rel="stylesheet" href="Mc.css">
 </head>
 <body>
-    <div style="margin: 20px;">
-        <input type="number" id="numFilas" min="1" value="1" />
-        <br /><br />
-        <input type="number" id="numColumnas" min="1" value="1" />
-        <br /><br />
-        <button id="botonGenerar">Generar Tabla</button>
-        <hr />
-        <section class="table">
-            <div id="contenedorTabla"></div>   
+    <main class="main-container metodo-container">
+        <section class="numAle-container">
+            <article class="title-card">
+                <p>Numeros aleatorios</p>
+                <input class="entry-date" type="number" id="numFilas"  min="1"  placeholder="Cantidad"/>
+                <button id="botonGenerar" >Generar Tabla</button>
+                <hr />                            
+            </article>
+            <article class="card-numAle" id="calcular">
+                <div class="border-card">
+                    <div class="card">
+                        <section class="table">
+                            <div id="contenedorTabla">
+                            </div>   
+                        </section>
+                    </div>
+                </div>
+            </article>
+        </section>      
+        <section class="resul-container">
+
         </section>
-        
-    </div>
+    </main>
+
     <script src="MC.js"></script>
+
 </body>
 </html>

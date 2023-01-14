@@ -1,3 +1,38 @@
+body{
+    padding: 0;
+    margin: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+}
+a {
+    text-decoration: none;
+}
+
+.main-container{
+
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    padding-top: 20px;
+}
+
+.numAle-container .title-card{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+.title-card .entry-date{
+    margin-bottom: 10px;
+    width: 150px;
+    min-width: 120px;
+
+}
+/* Diseño de los numeros aleatorios */
 table,td{
     border: 1px solid black;
 }
@@ -5,3 +40,39 @@ td{
     padding: 4px; text-align: center;
 }
 
+.card-numAle{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#contenedorTabla{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 225px;
+    max-height: 460px;
+    padding: 10px;
+}
+
+#contenedorTabla th{
+    text-align: center;
+}
+
+#contenedorTabla .table{
+    min-width: 200px;
+    text-align: center;
+}
+
+.table{
+    overflow-y: scroll;
+    margin: 0;
+}
+
+.table::-webkit-scrollbar{
+    width: 0;
+}
+
+#card-table th{
+    border: 1px solid black;
+}
