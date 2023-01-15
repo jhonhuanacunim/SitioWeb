@@ -17,8 +17,14 @@ a {
     display: grid;
     grid-template-columns: 1fr 3fr;
     padding-top: 20px;
+    
 }
 
+/* .metodo-container{
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);    
+}
+ */
 .numAle-container .title-card{
     display: flex;
     flex-direction: column;
@@ -69,11 +75,11 @@ td{
     margin-left: 100px;
 }
 
-#solucion,#siguiente {
+#solucion,#calcular,#resultado {
     margin-right: 100px;
 }
 /* Tabla de los  resultados */
-#contenedorTabla-Resul{
+#contenedorTabla-Resul, #contenedorTabla-Resul-con{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -82,15 +88,18 @@ td{
     padding: 10px;
 }
 
-#contenedorTabla-Resul th{
+#contenedorTabla-Resul,#contenedorTabla-Resul-con th{
     text-align: center;
 }
 
-#contenedorTabla-Resul .table{
+#contenedorTabla-Resul,#contenedorTabla-Resul-con .table{
     min-width: 200px;
     text-align: center;
 }
 
+#tableEnd th{
+    border: 1px solid black;
+}
 #card-table-resul th{
     border: 1px solid black;
 }
@@ -135,7 +144,10 @@ td{
 }
 
 .resul-container .card-table-entry{
-    height: 48%;
+    height: 300px;
+    max-height: 45%;
+    background: aquamarine;
+    margin-bottom: 10px;
 }
 /* Diseño de la tabla de ingreso de datos */
 .card-table-entry{
@@ -176,9 +188,46 @@ td{
     border: none;
 }
 
-#card-table-entry thead th{
+#card-table-entry thead th, #inputTextResul{
     text-align: center;
+    vertical-align: middle;
 }
+
+#inputTextResul p{
+    margin: 0;
+}
+
 #card-table-entry thead th .enca{
     margin: 10px;
 }
+
+.date-entry #botonGenerarTableEntry{
+    margin: 10px;
+}
+/* Diseño de la tabla de la parte de rangos */
+.resul-container .card-table-exit{
+    height: 300px;
+    max-height: 45%;
+    background: aquamarine;
+    display: flex;
+    
+
+}
+.card-table-exit{
+    
+}
+.card-table-exit .date-exit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+}
+
+#card-table-exit-resul thead th .enca{
+    margin: 10px;
+}
+
+
+
+
