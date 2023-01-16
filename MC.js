@@ -205,7 +205,7 @@ const procFinal = () => {
         tableEnd.rows[x].cells[1].innerHTML=contadorNumeros[x-1];
         sumaCantidad+=contadorNumeros[x-1];
     }
-    document.getElementById("prom").innerHTML=sumaCantidad/numeroFi;
+    document.getElementById("prom").innerHTML=(sumaCantidad/numeroFi).toFixed(3);
     //tableEnd.rows[numeroFi+1].cells[1].innerHTML=(sumaCantidad/numeroFi);
 }
 
