@@ -5,31 +5,42 @@ body{
     bottom: 0;
     left: 0;
     right: 0;
+    position: fixed;
 
 }
-a {
-    text-decoration: none;
-}
+
 
 .main-container{
 
     height: 100vh;
     display: grid;
     grid-template-columns: 1fr 3fr;
-    padding-top: 20px;
+    animation: cambiar 10s ease-in-out infinite;
     
 }
 
-/* .metodo-container{
-    background: rgb(2,0,36);
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);    
+@keyframes cambiar{
+    0%{background-position: 0 50%;}
+    50%{background-position: 100% 50%;}
+    100%{background-position: 0 50%;}
 }
- */
+
+.metodo-container{
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);   
+    background-size: 400% 400%; 
+}
+
+ .numAle-container {
+    background: #f9e498;
+    margin: 10px;
+    border-radius: 15px;
+ }
+
 .numAle-container .title-card{
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-right: 30px;
 }
 
 .title-card .entry-date{
@@ -37,6 +48,10 @@ a {
     width: 150px;
     min-width: 120px;
 
+}
+
+.title-card p{
+    padding-top: 15px;
 }
 /* Diseño de los numeros aleatorios */
 table,td{
@@ -57,7 +72,7 @@ td{
 }
 
 .body-metodo::-webkit-scrollbar{
-    /* width: 0; */
+    width: 0;
 }
 
 .card-numAle{
@@ -78,13 +93,26 @@ td{
 #solucion,#calcular,#resultado {
     margin-right: 100px;
 }
+
+.card-numAle .border-options{
+    display: flex;
+    margin-left: 90px;
+}
+
+.card-numAle .border-button-atras div {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 /* Tabla de los  resultados */
 #contenedorTabla-Resul, #contenedorTabla-Resul-con{
     display: flex;
     flex-direction: column;
     align-items: center;
     min-width: 225px;
-    max-height: 460px;    
+    max-height: 400px;    
     padding: 10px;
 }
 
@@ -110,7 +138,7 @@ td{
     flex-direction: column;
     align-items: center;
     min-width: 225px;
-    max-height: 460px;
+    max-height: 400px;
     padding: 10px;
 }
 
@@ -118,14 +146,25 @@ td{
     text-align: center;
 }
 
-#contenedorTabla .table{
+.card{
+    border-radius: 15px;
+}
+
+ .table #contenedorTabla{
     min-width: 200px;
     text-align: center;
+    border-radius: 15px;
 }
 
 .table{
     overflow-y: scroll;
     margin: 0;
+    border-radius: 15px;
+    background:#a1fafa;
+    box-shadow: 12px 11px 21px -7px rgba(0,0,0,0.56);
+    -webkit-box-shadow: 12px 11px 21px -7px rgba(0,0,0,0.56);
+    -moz-box-shadow: 12px 11px 21px -7px rgba(0,0,0,0.56);
+
 }
 
 .table::-webkit-scrollbar{
@@ -143,11 +182,15 @@ td{
     /* align-items: center; */
 }
 
+.card-table-entry{
+    margin: 10px;  
+    border-radius: 15px;
+    background:aquamarine;
+}
+
 .resul-container .card-table-entry{
     height: 300px;
     max-height: 45%;
-    background: aquamarine;
-    margin-bottom: 10px;
 }
 /* Diseño de la tabla de ingreso de datos */
 .card-table-entry{
@@ -180,6 +223,12 @@ td{
 
 }
 /* Diseño de tabla de entrada de datos (unidades, frecuencia) */
+
+.date-entry p{
+    text-align: center;
+}
+
+
 #card-table-entry, th, td{
     border: 1px solid black;
 }
@@ -204,28 +253,96 @@ td{
 .date-entry #botonGenerarTableEntry{
     margin: 10px;
 }
-/* Diseño de la tabla de la parte de rangos */
-.resul-container .card-table-exit{
-    height: 300px;
-    max-height: 45%;
-    background: aquamarine;
+
+#contenedorTabla-Entry{
     display: flex;
-    
+    flex-direction: column;
+    align-items: center;
+    min-width: 225px;
+    max-height: 250px;
+    padding: 10px;   /* sin paggin */
 
 }
-.card-table-exit{
-    
+
+.table-U-F{
+    overflow-y: scroll;
+    margin: 0;
+    box-shadow:2px 2px 3px rgba(49, 49, 49, 0.5);
+    border-radius: 15px;
+    background:#a1fafa;
+
 }
-.card-table-exit .date-exit {
+
+.table-U-F::-webkit-scrollbar{
+    width: 0;
+}
+
+#card-table-entry thead {
+    width: 180px;
+}
+
+
+/* Diseño de la tabla de la parte de rangos */
+
+
+.card-table-exit{
+    border-radius: 15px;
+    margin: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 90%;
 }
+
+
+.resul-container .card-table-exit{
+    height: 300px;
+    max-height: 45%;
+    background: aquamarine;
+}
+
+.date-exit{
+    background-color:#a1fafa;
+    border-radius: 15px;
+    box-shadow:2px 2px 3px rgba(49, 49, 49, 0.5);
+}
+
+.date-exit::-webkit-scrollbar{
+    width: 0;
+}
+
+.card-table-exit .date-exit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 350px;
+    max-width: 400px;
+    overflow-y: scroll;
+    margin: 0;
+}
+#contenedorTabla-exit{
+    
+    min-width: 250px;
+    max-height: 270px; 
+    padding: 10px;
+    border-radius: 15px;
+
+}
+
 
 #card-table-exit-resul thead th .enca{
     margin: 10px;
+
+}
+/* imagenes */
+a img{
+    padding-top: 10px;
+    width: 40px;
+
+}
+
+.border-button-atras #atrasF,#adelanteF{
+    opacity: 0.3;
 }
 
 

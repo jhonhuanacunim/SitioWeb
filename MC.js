@@ -1,5 +1,3 @@
-
-
 var tablaProbabils;
 var tablaRangos;
 var contenedorTabla;
@@ -107,6 +105,7 @@ const probOcurrenciaFreAcumulada = () => {
      for(let x=1;x<=cantFilas*2;x+=2){
         sumaTotal += dateTable[x]; 
     }
+    //Agregando la suma de la frencuencia
     document.getElementById("number"+((cantFilas*2)+1)).value= sumaTotal; 
     /* Probabilidad de ocurrencia */
     for(let x=1;x<=cantFilas;x++){
