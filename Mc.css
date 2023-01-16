@@ -224,6 +224,11 @@ td{
 }
 /* Diseño de tabla de entrada de datos (unidades, frecuencia) */
 
+.date-entry{
+    background: #cdcdcd;
+    border-radius: 15px 0px 0px 15px;
+}
+
 .date-entry p{
     text-align: center;
 }
@@ -344,7 +349,52 @@ a img{
 .border-button-atras #atrasF,#adelanteF{
     opacity: 0.3;
 }
+/* diseño de botones */
 
+.designButton{
 
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 30px;
+    background: #69ff2e;
+    color: rgb(34, 34, 34);
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: .3s ease all;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+
+}
+
+.boton span {
+	position: relative;
+	z-index: 2;
+	transition: .3s ease all;
+}
+
+.designButton::after{
+	content: "";
+    width: 500px;
+	height: 300px;
+	background: #ebcc43;
+	position: absolute;
+	z-index: 1;
+	top: -300px;
+	left: 0px;
+	transition: .4s ease-in-out all;
+	border-radius: 0px 0px 300px 300px;
+    opacity: 0.3;
+}
+
+.designButton:hover::after {
+	top: 0;
+}
 
 

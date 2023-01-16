@@ -81,7 +81,7 @@ const generarTablaEntrada = () => {
         if(numeroFi*2+1==auxID){
             tablaEntry += "<tr>";
             tablaEntry += "<td id='inputTextResul'>    <p> Resultado</p> </td>";
-            tablaEntry += "<td > <input class='card-date-entry' type='number' id='number"+auxID+"'  min='1' /> </td>";
+            tablaEntry += "<td id='res'>  </td>";
             tablaEntry += "</tr>";
         }    
     }
@@ -106,13 +106,17 @@ const probOcurrenciaFreAcumulada = () => {
         sumaTotal += dateTable[x]; 
     }
     //Agregando la suma de la frencuencia
-    document.getElementById("number"+((cantFilas*2)+1)).value= sumaTotal; 
+    console.log(sumaTotal);
+    document.getElementById("res").innerHTML=sumaTotal;
+
     /* Probabilidad de ocurrencia */
     for(let x=1;x<=cantFilas;x++){
+        //Calculamos la prob. de ocurrencia dividiendo el valor entre el total
         tablaProbabils.rows[x].cells[2].innerHTML=((dateTable[x+(x-1)])/sumaTotal).toFixed(3);    
     }
     let sumaFrecuencia=0;
     for(let x=1;x<=cantFilas;x++){
+        //calculamos la frecuencia acumulada sumando la prob. de ocurrencia
         sumaFrecuencia+=parseFloat(tablaProbabils.rows[x].cells[2].innerHTML);
         tablaProbabils.rows[x].cells[3].innerHTML=sumaFrecuencia.toFixed(3);    
     } 
@@ -174,6 +178,7 @@ const procFinal = () => {
     tableAccountant.innerHTML = "";
     let tableAcc = "<table id='tableEnd'>";
     tableAcc+="<thead > <th >Unidades</th> <th>Cantidad</th> </thead>";
+    let aux=0;
     for (let k = 1; k <= numeroFi; k++) {
         tableAcc += "<tr>";
         for (let o = 1; o <= 2; o++) {
@@ -182,16 +187,26 @@ const procFinal = () => {
             }else{
                 tableAcc += "<td ></td>"; 
             }
+            aux++;
         }
         tableAcc += "</tr>";
+        if(numeroFi*2==aux){
+            tableAcc += "<tr>";
+            tableAcc += "<td id='inputTextResul'>    <p> Prom.</p> </td>";
+            tableAcc += "<td id='prom'>  </td>";
+            tableAcc += "</tr>";
+        }   
     }
     tableAcc += "</table>";
     tableAccountant.innerHTML = tableAcc;
-
+    let sumaCantidad=0;
     let tableEnd = document.getElementById("tableEnd");
     for(let x=1;x<=numeroFi;x++){
         tableEnd.rows[x].cells[1].innerHTML=contadorNumeros[x-1];
+        sumaCantidad+=contadorNumeros[x-1];
     }
+    document.getElementById("prom").innerHTML=sumaCantidad/numeroFi;
+    //tableEnd.rows[numeroFi+1].cells[1].innerHTML=(sumaCantidad/numeroFi);
 }
 
 window.addEventListener('load', function () {
